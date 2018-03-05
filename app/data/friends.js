@@ -16,7 +16,7 @@ var friends = [
   },
   {
     "name": "David",
-    "photo": "https://www.disneyclips.com/imagesnewb/images/davidhawena.gif",
+    "photo": "http://www.behindthevoiceactors.com/_img/chars/david-kawena-lilo-and-stitch-1.95.jpg",
     "scores": [4, 1, 4, 1, 2, 3, 2, 5, 1, 5]
   }
 ];

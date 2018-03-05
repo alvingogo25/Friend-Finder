@@ -13,17 +13,23 @@ router.get("/api/friends", function (req, res) {
 
 router.post("/api/friends", function (req, res) {
   var user = req.body;
-  console.log(user.scores);
-  friends.push(user);
-  var difference = 100;
-  var match;
-  for (var i = 0; i < friends.length; i++) {
-    difference = compare(friends[i].scores, user.scores)
-    if (compare(friends[i].scores, user.scores) < difference) {
+  var intarr = [];
+  user.scores.forEach(function(number){
+    intarr.push(parseInt(number));
+  })
+  //console.log(intarr);
+  var firstDiff = compare(friends[0].scores, intarr);
+  // console.log(firstDiff);
+  var match = friends[0];
+  for (var i = 1; i < friends.length; i++) {
+    var secDiff = compare(friends[i].scores, intarr)
+    if (secDiff < firstDiff) {
       match = friends[i];
     }
-  }
+  };
+  friends.push(user);
   console.log("match", match);
+  res.json(match);
 });
 
 function compare(userScore, defaultScore){
