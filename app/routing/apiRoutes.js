@@ -16,7 +16,7 @@ router.post("/api/friends", function (req, res) {
   var intarr = [];
   user.scores.forEach(function(number){
     intarr.push(parseInt(number));
-  })
+  });
   //console.log(intarr);
   var firstDiff = compare(friends[0].scores, intarr);
   // console.log(firstDiff);
